@@ -9,15 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -33,9 +31,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+
+                         <li class="nav-item">
+                         <a href="{{ route('blogs.index') }}" class="nav-link">Blogs</a>
+
+                         
+                     </li
                      
                      <li class="nav-item">
                          <a href="{{ route('blogs.create') }}" class="nav-link">Create Blogs</a>
+
+                         
+                     </li>
+
+                     <li class="nav-item">
+                         <a href="{{ route('trashed-blogs') }}" class="nav-link">Trashed Blogs</a>
                      </li>   
                     </ul>
 
@@ -91,5 +101,9 @@
             
         </main>
     </div>
+
+ <!-- Scripts -->
+    <script src="{{ mix('js/app.js') }}"></script>
+   
 </body>
 </html>

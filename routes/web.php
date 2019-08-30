@@ -25,3 +25,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/blogs','BlogController');
+
+Route::get('/trashed-blogs','BlogController@trashed')->name('trashed-blogs');
+
+
+Route::put('/restore-blogs/{id}','BlogController@restore')->name('restore-blogs');
+
+Route::delete('/delete-blogs/{id}','BlogController@delete')->name('delete-blogs');
