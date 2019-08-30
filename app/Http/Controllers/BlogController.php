@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use Illuminate\Http\Request;
 use App\Http\Requests\Blogs\CreateBlogRequest;
+use App\Http\Requests\Blogs\UpdateBlogRequest;
 class BlogController extends Controller
 {
     /**
@@ -56,7 +57,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        //
+        return view('blogs.show',compact('blog'));
     }
 
     /**
@@ -67,7 +68,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        //
+        return view('blogs.create',compact('blog'));
     }
 
     /**
@@ -77,9 +78,17 @@ class BlogController extends Controller
      * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Blog $blog)
+    public function update(UpdateBlogRequest $request, Blog $blog)
     {
-        //
+        $blog->update([
+            'title'=>$request->title,
+            'body'=>$request->body,
+        ]);
+
+        session()->flash('success','Blog updated successfully');
+
+        return redirect(route('blogs.index'));
+
     }
 
     /**
