@@ -46,7 +46,13 @@
 
                      <li class="nav-item">
                          <a href="{{ route('trashed-blogs') }}" class="nav-link">Trashed Blogs</a>
-                     </li>   
+                     </li>
+
+
+                     <li class="nav-item">
+                         <a href="{{ route('admin.index') }}" class="nav-link">Admin</a>
+                     </li> 
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
