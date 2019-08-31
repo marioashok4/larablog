@@ -7,6 +7,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Blog::class, function (Faker $faker) {
     return [
-        //
+        
+        'title'=>$faker->sentence(10),
+        'body'=>$faker->paragraph(5),
+
+
     ];
 });

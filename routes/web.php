@@ -35,3 +35,5 @@ Route::delete('/delete-blogs/{id}','BlogController@delete')->name('delete-blogs'
 
 
 Route::resource('/admin','AdminController');
+
+Route::resource('/categories','CategoryController');

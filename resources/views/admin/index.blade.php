@@ -25,6 +25,12 @@
 		
 	</button>
 
+	<button class="btn btn-dark mr-0">
+
+		<a href="{{ route('categories.create') }}" class="">CREATE CATEGORIES</a>
+		
+	</button>
+
 </div>
 
 </div>
